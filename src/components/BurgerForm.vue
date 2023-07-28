@@ -2,7 +2,7 @@
   <div>
     <Message :msg="msg" v-show="msg" />
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurger">
         <div class="input-container">
         <label for="nome">Nome do cliente:</label>
         <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -87,7 +87,7 @@ export default {
 
       console.log(res)
 
-      this.msg = "Pedido realizado com sucesso!"
+      this.msg = `Pedido Nº ${red.id} realizado com sucesso!`
 
       // clear message
       setTimeout(() => this.msg = "", 3000)
